@@ -66,11 +66,12 @@ var events = [{
 function buildDropdown() {
     // get dropdown from page
     let dropdownMenu = document.getElementById('eventDropdown');
-    // take out the dropdown menu's trash
-    dropdownMenu.innterHTML = '';
+    
+    // clear dropdown HTML
+    dropdownMenu.innerHTML = '';
 
     // get events
-    let currentEvents = events;
+    let currentEvents = getEventData();
 
     // retrieve ONLY city names
     let eventCities = currentEvents.map( (event) => event.city );
@@ -88,7 +89,7 @@ function buildDropdown() {
     let menuItem = dropdownTemplateNode.querySelector('a');
 
     // change the text
-    menuItem.textContent = 'all cities';
+    menuItem.textContent = 'All Cities';
 
     // set element class
     menuItem.setAttribute("data-string", "All");
@@ -108,6 +109,7 @@ function buildDropdown() {
 
     displayStats(currentEvents);
     displayEventData(currentEvents);
+
 }
 
 function displayStats(eventsArray) {
@@ -180,4 +182,37 @@ function displayEventData(eventsArray) {
 
         tableBody.appendChild(eventRow)
     }
+}
+
+function getEventData() {
+    let currentEvents = JSON.parse(localStorage.getItem('bwEventData'));
+
+    if (currentEvents == null) {
+        currentEvents = events;
+        localStorage.setItem('bwEventData', JSON.stringify(currentEvents));
+
+    }
+
+    return currentEvents;
+}
+
+function getEvents(element) {
+    let currentEvents = getEventData();
+    let cityName = element.getAttribute('data-string');
+
+    let filteredEvents = currentEvents;
+
+    if (cityName != 'All') {
+        filteredEvents = currentEvents.filter(
+            function(event) {
+                if (cityName == event.city) {
+                    return event;
+                }
+            }
+        );
+    }
+
+    document.getElementById('statsHeader').textContent = cityName;
+    displayStats(filteredEvents);
+    displayEventData(filteredEvents);
 }
