@@ -1,0 +1,458 @@
+:root {
+    --bw-primary-color: #1f80ff;
+    --bw-secondary-color: #4373b3;
+
+    --bw-nav-toggler-color: var(--bw-highlight-color);
+    --bw-nav-toggler-glow: #435bc9;
+
+    --bw-dark-color: #212121;
+    --bw-light-color: #f6ecec;
+    --bw-background-color: #f6ecec;
+    --bw-footer-card-color: rgba(255, 255, 255, 0);
+
+    --bw-title-font: 'Youtube Sans', sans-serif;
+    --bw-subtitle-font: 'Youtube Sans Light', sans-serif;
+    --bw-heading-font: 'Youtube Sans', sans-serif;
+    --bw-subheading-font: 'Youtube Sans Light', sans-serif;
+    --bw-body-font: 'Lato', sans-serif;
+
+    --bw-font-size: 1.2rem;
+    --bw-font-weight: 400;
+    --bw-line-height: 1.5rem;
+    --bw-title-color: var(--bw-dark-color);
+
+    --bw-section-color-even: #d4c8c8;
+    --bw-section-color-odd: #f6ecec;
+
+    --bw-rewind-color: #40e0a380;
+
+    --bw-link-color: #40e0a3;
+
+    --bw-background-image: url(/img/background.png);
+
+}
+
+html,
+body {
+    height: 100%;
+    overflow-y: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--bw-body-font);
+    font-size: var(--bw-font-size);
+    font-weight: var(--bw-font-weight);
+    line-height: var(--bw-line-height);
+    color: var(--bw-dark-color);
+    background: var(--bw-background-image);
+    background-position: center center;
+}
+
+body.background-image {
+    backdrop-filter: blur(30px)
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* start navbar overrides */
+
+#main-nav {
+    background: var(--bw-dark-color);
+
+}
+
+#main-nav button {
+    border-color: var(--bw-secondary-color);
+
+}
+
+.navbar-toggler {
+    color: var(--bw-nav-toggler-glow);
+}
+
+.navbar-toggler-icon-bw {
+    color: var(--bw-nav-toggler-color);
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+}
+
+/* end navbar overrides */
+
+/* start element overrides */
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3 {
+    font-family: var(--bw-subheading-font);
+    font-weight: 700;
+    letter-spacing: .1rem;
+    color: var(--bw-light-color);
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+    font-family: var(--bw-heading-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: var(--bw-light-color);
+}
+
+.btn-primary {
+    background-color: var(--bw-dark-color) !important;
+    border-color: var(--bw-dark-color) !important;
+    color: var(--bw-light-color);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1) !important;
+    border-color: var(--bw-dark-color);
+    color: var(--bw-light-color);
+}
+
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    filter: brightness(1.1) !important;
+    border-color: var(--bw-dark-color)
+}
+
+
+/* end element overrides */
+
+/* start header styles */
+
+.main-header {
+    height: 200px;
+    background-image: url(/img/surreal-wave.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: var(--bw-light-color);
+}
+
+.main-header-cover {
+    min-height: 200px;
+    background-image: url(/img/surreal-wave.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.5);
+}
+
+.main-header-cover > .main-header-content {
+    backdrop-filter: blur(2.25px) hue-rotate(40deg) brightness(90%) contrast(150%) saturate(200%);
+}
+
+@supports not (backdrop-filter: blur(3px)) {
+    .main-header-cover > .main-header-content {
+        background-color: rgba(0, 37, 46, 0.6);
+    }
+}
+
+.main-header-wrapper {
+    padding-left: 1rem;
+}
+
+.main-title {
+    font-family: var(--bw-title-font);
+    font-size: 2.5rem;
+    line-height: 2rem;
+    color: var(--bw-dark-color)
+}
+
+.main-logo {
+    height: 0.75em
+}
+
+.subtitle {
+    font-family: var(--bw-subtitle-font);
+    font-size: 0.7rem;
+    line-height: 1rem;
+    font-weight: 300;
+    color: var(--bw-dark-color);
+    letter-spacing: 0.09rem;
+}
+
+/* end header styles */
+
+/* start main styles */
+
+.dev-icons {
+    font-size: 3rem;
+    padding-left: 0.5rem;
+}
+
+.btn-info {
+    background-color: var(--bw-link-color) !important;
+    border: none;
+}
+
+.link-style {
+    color: var(--bw-link-color);
+    text-decoration: none;
+}
+
+.link-style:hover {
+    filter: brightness(1.5) saturate(2);
+    text-decoration: underline;
+}
+
+.section-cta {
+    background-color: var(--bw-dark-color);
+    color: var(--bw-light-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+.cta-arrow {
+    color: var(--bw-light-color);
+    font-size: 1rem;
+}
+
+.cta-arrow:hover {
+    color: var(--bw-highlight-color);
+    filter: brightness(1.2)
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.check-list {
+    list-style-type: none;
+}
+
+.check-list > li i {
+    color: var(--bw-link-color)
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: var(--bw-link-color) !important;
+    color: #212121 !important;
+    border-radius: 0.375rem !important;
+}
+
+.app-logo {
+    border-radius: 1rem;
+}
+
+main.container {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.alert-info {
+    background-color: var(--bw-rewind-color);
+    border-color: var(--bw-link-color);
+    color: var(--bw-light-color);
+}
+
+.alert-danger {
+    background-color: #e0404080;
+    border-color: #e04040;
+    color: var(--bw-light-color);
+}
+
+
+/* end main styles */
+
+/* start footer styles */
+
+.footer-main {
+    background-color: var(--bw-dark-color);
+    color: var(--bw-light-color)
+}
+
+.social-icons {
+    color: var(--bw-light-color);
+    opacity: 1;
+    transition: color 0.15s ease-in;
+}
+
+.social-icons:hover {
+    color: var(--bw-link-color);
+    opacity: 1;
+}
+
+.social-icons {
+    font-size: 2rem;
+}
+
+/* .footer-cta {
+    background-image: url(/img/background.png);
+    width: 100%;
+    border-radius: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.footer-bg-cta {
+    background: linear-gradient(to bottom,
+                                var(--bw-footer-card-color),
+                                var(--bw-footer-card-color) 50%,
+                                var(--bw-dark-color) 50%,
+                                var(--bw-dark-color) 100%);
+} */
+
+#footer-img:hover {
+    content: url(/img/logo-wave.png);
+    transition: opacity 3s ease;
+}
+
+
+/* end footer styles */
+
+
+
+/* -------------------- FONTS -------------------- */
+
+@font-face {
+    font-family: 'Youtube Sans';
+    src: url(/fonts/YOUTUBE-SANS-BOLD.TTF);
+}
+
+@font-face {
+    font-family: 'Youtube Sans Light';
+    src: url(/fonts/YOUTUBE-SANS-LIGHT.TTF);
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .main-header {
+        height: 200px;
+        background-image: url(/img/JillPrestonBanner_767.png);
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        line-height: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.7rem;
+        line-height: 1rem;
+        letter-spacing: 0.13rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .main-header {
+        height: 300px;
+        background-image: url(/img/JillPrestonBanner_992.png);
+    }
+    
+    .main-title {
+        font-size: 4.5rem;
+        line-height: 3.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+        line-height: 1.3rem;
+        letter-spacing: 0.17rem;
+    }
+
+    .section-cta {
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+    }
+
+    .cta-arrow {
+        font-size: 1.2rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .main-header {
+        height: 400px;
+        background-image: url(/img/JillPrestonBanner_1200.png);
+    }
+    
+    .main-title {
+        font-size: 6rem;
+        line-height: 5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.75rem;
+        line-height: 1.75rem;
+        letter-spacing: 0.28rem;
+    }
+
+    .section-cta {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .cta-arrow {
+        font-size: 1.7rem;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .main-header {
+        height: 500px;
+        background-image: url(/img/JillPrestonBanner_2560.png);
+    }
+    
+    .main-title {
+        font-size: 7rem;
+        line-height: 6rem;
+    }
+    
+    .subtitle {
+        font-size: 2rem;
+        line-height: 2rem;
+        letter-spacing: 0.37rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .main-header {
+        height: 500px;
+        background-image: url(/img/JillPrestonBanner_2560.png);
+    }
+    
+    .main-title {
+        font-size: 7rem;
+        line-height: 6rem;
+    }
+    
+    .subtitle {
+        font-size: 2rem;
+        line-height: 2rem;
+        letter-spacing: 0.37rem;
+    }
+}
