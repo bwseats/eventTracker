@@ -88,9 +88,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
-                    <ul class="dropdown-menu" id="eventDropdown">
-                        <!-- <li><a class="dropdown-item" href="#">location</a></li> -->
-                    </ul>
+                    <ul class="dropdown-menu" id="eventDropdown"></ul>
                 </div>
                 <table class="table table-striped bg-light rounded">
                     <tr>
@@ -189,7 +187,7 @@
                     </h1>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form id="newEventForm">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Event Name</label>
                             <input type="text" class="form-control" id="newEventName"
@@ -271,7 +269,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info" id="btnSubmit">Save</button>
+                    <button type="button" class="btn btn-info" data-bs-dismiss="modal" onclick="saveEventData()">Save</button>
                 </div>
             </div>
         </div>
