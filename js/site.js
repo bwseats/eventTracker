@@ -66,7 +66,7 @@ var events = [{
 function buildDropdown() {
     // get dropdown from page
     let dropdownMenu = document.getElementById('eventDropdown');
-    
+
     // clear dropdown HTML
     dropdownMenu.innerHTML = '';
 
@@ -84,7 +84,7 @@ function buildDropdown() {
 
     // copy template
     let dropdownTemplateNode = document.importNode(template.content, true);
-    
+
     // get <a> tag from the template copy
     let menuItem = dropdownTemplateNode.querySelector('a');
 
@@ -119,7 +119,7 @@ function displayStats(eventsArray) {
 
     document.getElementById('total').textContent = stats.total.toLocaleString();
     document.getElementById('average').textContent = stats.averageAttendance.toLocaleString(
-        "en-UK", {
+        "en-US", {
             maximumFractionDigits: 0,
             minimumFractionDigits: 0
         }
